@@ -1,0 +1,9 @@
+﻿<Sqlite2CsConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <databaseFilePath>D:\Develop\project0\program\tools\sqlite\dashenquan_p0_design.db</databaseFilePath>
+  <outputPath>D:\Develop\project0\program\client\CoLDemo\Assets\Game\GameLogicModules\ConfigData</outputPath>
+  <databaseName>main</databaseName>
+  <filterName>t</filterName>
+  <CSdataClassImpledInterface>
+    <string>IClientData</string>
+  </CSdataClassImpledInterface>
+</Sqlite2CsConfig>
