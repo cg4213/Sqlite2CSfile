@@ -95,6 +95,8 @@
     </Compile>
     <Compile Include="Sqlite2CsConfig.cs" />
     <Compile Include="Sqlite2CsConverter.cs" />
+    <Compile Include="Xml2Cs\Xml2CsConfig.cs" />
+    <Compile Include="Xml2Cs\Xml2CsConverter.cs" />
     <EmbeddedResource Include="AddInterface.resx">
       <DependentUpon>AddInterface.cs</DependentUpon>
     </EmbeddedResource>
