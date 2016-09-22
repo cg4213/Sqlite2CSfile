@@ -428,7 +428,7 @@ namespace Sqlite2Cs
     /// <summary>
     /// CS文件
     /// </summary>
-    class CSFileWriter
+    public class CSFileWriter
     {
         /// <summary>
         /// all the usings
