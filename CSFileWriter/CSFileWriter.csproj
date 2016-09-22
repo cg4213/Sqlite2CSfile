@@ -36,7 +36,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSAttribute.cs" />
+    <Compile Include="CSClass.cs" />
+    <Compile Include="CSField.cs" />
+    <Compile Include="CSFuncCall.cs" />
+    <Compile Include="CSFuncDeclare.cs" />
+    <Compile Include="CSObject.cs" />
     <Compile Include="CSFileWriter.cs" />
+    <Compile Include="CSParseFunc.cs" />
+    <Compile Include="CSVar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
