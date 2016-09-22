@@ -16,18 +16,7 @@ namespace Sqlite2Cs
         const string SQLITE_TYPE_REAL = "REAL";
         const string SQLITE_TYPE_TEXT = "TEXT";
         const string SQLITE_TYPE_BLOB = "BLOB";
-
-        //cs types
-        const string CS_TYPE_INT = "int";
-        const string CS_TYPE_SHORT = "short";
-        const string CS_TYPE_LONG = "long";
-        const string CS_TYPE_STRING = "string";
-        const string CS_TYPE_FLOAT = "float";
-        const string CS_TYPE_DOUBLE = "double";
-        const string CS_TYPE_DATE = "Date";
-        const string CS_TYPE_BYTEARRAY = "byte[]";
-        const string CS_TYPE_STRARRAY = "string[]";
-
+        
         //read types
         const string CS_READ_INT = "ReadInt";
         const string CS_READ_FLOAT = "ReadFloat";
@@ -38,18 +27,18 @@ namespace Sqlite2Cs
         string HandleInteger(string[] sqliteTypeInfo)
         {
             if (sqliteTypeInfo.Length == 1)
-                return CS_TYPE_INT;
+                return CSFile.CS_TYPE_INT;
 
             int length = 0;
             if (int.TryParse(sqliteTypeInfo[1], out length))
             {
                 if (length > 11)
-                    return CS_TYPE_LONG;
+                    return CSFile.CS_TYPE_LONG;
                 else
-                    return CS_TYPE_INT;
+                    return CSFile.CS_TYPE_INT;
             }
             else
-                return CS_TYPE_INT;
+                return CSFile.CS_TYPE_INT;
         }
 
         string HandleIntegerType(string[] sqliteTypeInfo)
@@ -79,11 +68,11 @@ namespace Sqlite2Cs
                 case SQLITE_TYPE_INT:
                     return HandleInteger(sqliteTypeInfo);
                 case SQLITE_TYPE_REAL:
-                    return CS_TYPE_FLOAT;
+                    return CSFile.CS_TYPE_FLOAT;
                 case SQLITE_TYPE_TEXT:
-                    return CS_TYPE_STRING;
+                    return CSFile.CS_TYPE_STRING;
                 case SQLITE_TYPE_BLOB:
-                    return CS_TYPE_BYTEARRAY;
+                    return CSFile.CS_TYPE_BYTEARRAY;
                 default:
                     System.Diagnostics.Trace.WriteLine("Unhandled sqlite type [" + sqliteType + "]");
                     return string.Empty;

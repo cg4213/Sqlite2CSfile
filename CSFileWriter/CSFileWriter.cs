@@ -9,6 +9,20 @@ namespace CSFileWriter
     /// </summary>
     public class CSFile
     {
+
+
+        //cs types
+        public const string CS_TYPE_INT = "int";
+        public const string CS_TYPE_SHORT = "short";
+        public const string CS_TYPE_LONG = "long";
+        public const string CS_TYPE_STRING = "string";
+        public const string CS_TYPE_FLOAT = "float";
+        public const string CS_TYPE_DOUBLE = "double";
+        public const string CS_TYPE_DATE = "Date";
+        public const string CS_TYPE_BYTEARRAY = "byte[]";
+        public const string CS_TYPE_STRARRAY = "string[]";
+
+
         /// <summary>
         /// all the usings
         /// </summary>
