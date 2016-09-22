@@ -84,6 +84,7 @@
     <Compile Include="AddInterface.Designer.cs">
       <DependentUpon>AddInterface.cs</DependentUpon>
     </Compile>
+    <Compile Include="CSParseFunc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sqlite2Cs.cs">

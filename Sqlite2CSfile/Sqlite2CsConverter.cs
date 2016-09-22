@@ -5,6 +5,7 @@ using System.Data.SQLite;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using CSFileWriter;
 
 namespace Sqlite2Cs
 {
@@ -156,10 +157,17 @@ namespace Sqlite2Cs
         {
             return reader.GetString(reader.GetOrdinal(ordinal));
         }
-
-        CSFileWriter ConvertTable(string dBName, string tableName, string comment, string[] impledInterface)
+        /// <summary>
+        /// Convsert specified data table to cs file object
+        /// </summary>
+        /// <param name="dBName"></param>
+        /// <param name="tableName"></param>
+        /// <param name="comment"></param>
+        /// <param name="impledInterface"></param>
+        /// <returns></returns>
+        CSFile ConvertTable(string dBName, string tableName, string comment, string[] impledInterface)
         {
-            CSFileWriter writer = new CSFileWriter();
+            CSFile writer = new CSFile();
 
             string sqlString = string.Format("PRAGMA table_info([{0}]);", tableName);
 
@@ -213,7 +221,7 @@ namespace Sqlite2Cs
 
             foreach (KeyValuePair<string, string> tableInfo in tableInfoMap)
             {
-                CSFileWriter csFile = ConvertTable(config.databaseName, tableInfo.Key, tableInfo.Value, config.CSdataClassImpledInterface);
+                CSFile csFile = ConvertTable(config.databaseName, tableInfo.Key, tableInfo.Value, config.CSdataClassImpledInterface);
 
                 string filePath = config.outputPath + "/" + tableInfo.Key + ".cs";
                 if (File.Exists(filePath))
