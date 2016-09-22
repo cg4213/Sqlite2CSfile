@@ -193,9 +193,20 @@ namespace Sqlite2Cs
 
         private void generateCsFiles_Click(object sender, EventArgs e)
         {
-            converter.Covert(config);
+            try
+            {
+                converter.Covert(config);
+            }
+            catch (System.Exception exception)
+            {
+                if(exception is DirectoryNotFoundException)
+                {
+                    MessageBox.Show("Unknown Path:" + exception.Message);
+                }
+                else
+                MessageBox.Show("Unknown Exception" + exception.ToString());
+            }
         }
-
         private void dbNameBox_TextChanged(object sender, EventArgs e)
         {
             ChangeDatabaseName(dbNameBox.Text);
