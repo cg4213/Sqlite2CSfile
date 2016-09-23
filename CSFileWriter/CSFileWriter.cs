@@ -22,6 +22,10 @@ namespace CSFileWriter
         public const string CS_TYPE_BYTEARRAY = "byte[]";
         public const string CS_TYPE_STRARRAY = "string[]";
 
+        /// <summary>
+        /// file name
+        /// </summary>
+        public string name;
 
         /// <summary>
         /// all the usings
